@@ -1,3 +1,17 @@
+{% if MENUITEMS %}
+    <section class="module menuitems">
+        <h3 class="title module-title">Menu</h3>
+
+        <ul>
+            {% for name, link in MENUITEMS %}
+                <li>
+                    <a href="{{ link }}">{{ name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endif %}
+
 {% if SOCIAL %}
     <section class="module social">
         <h3 class="title module-title">Social</h3>
