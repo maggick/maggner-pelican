@@ -11,7 +11,7 @@
     <table class="archives">
         <thead>
             <tr>
-                <th>Data</th>
+                <th>Date</th>
                 <th>Post</th>
             </tr>
         </thead>
@@ -19,7 +19,7 @@
         <tbody>
         {% for article in dates %}
             <tr>
-                <td>{{ article.date.locale_date }}</td>
+                <td>{{ article.date }}</td>
                 <td><a href="{{ article.url }}">{{ article.title }}</a></td>
             </tr>
         {% endfor %}
