@@ -9,21 +9,13 @@
     <h1 class="page-title">Archives</h1>
 
     <table class="archives">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Post</th>
-            </tr>
-        </thead>
-
-        <tbody>
         {% for article in dates %}
             <tr>
                 <td>{{ article.locale_date }}</td>
+                <td>          </td>
                 <td><a href="{{ article.url }}">{{ article.title }}</a></td>
             </tr>
         {% endfor %}
-        </tbody>
     </table>
 
 {% endblock content %}
