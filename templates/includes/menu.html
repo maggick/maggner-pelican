@@ -1,9 +1,17 @@
 <nav class="pure-menu pure-menu-open pure-menu-horizontal menu">
     <ul>
-        <li>
-            <a href="{{ SITEURL }}/index.html" title="Blog">Blog</a>
-        </li>
-
+        {% if DISPLAY_CATEGORIES_ON_MENU != False %}
+            {% for category, articles in categories %}
+                <li>
+                  <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+                </li>
+            {% endfor %}
+        {% endif %}
+        {% if DISPLAY_PAGES_ON_MENU != False and DISPLAY_PAGES_ON_MENU != False %}
+            <li>
+              |
+            </li>
+        {% endif %}
         {% if DISPLAY_PAGES_ON_MENU != False %}
             {% for p in pages %}
                 <li>
