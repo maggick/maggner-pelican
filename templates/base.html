@@ -28,7 +28,19 @@
         <link rel="icon" type="image/x-icon" href="{{ FAVICON_URL }}">
     {% endif %}
 
-    <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} &raquo; Feed" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" />
+    {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_ALL_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+    {% endif %}
+    {% if FEED_ATOM %}
+        <link href="{{ FEED_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+    {% endif %}
+    {% if FEED_RSS %}
+        <link href="{{ FEED_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_ALL_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+    {% endif %}
+
     <link rel="canonical" href="{% block canonical_url %}{{ SITEURL }}/{{ page_name }}{% if articles_page and articles_page.number != 1 %}{{ articles_page.number }}{% endif %}.html{% endblock %}">
 
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
