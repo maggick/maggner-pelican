@@ -46,7 +46,7 @@
     <h3 class="title module-title">Tags</h3>
 
     <ul>
-        {% for tag in tag_cloud|sort %}
+        {% for tag in tag_cloud %}
             <li class="tag tag-{{ tag.1 }}">
               <a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>
             </li>
